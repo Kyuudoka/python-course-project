@@ -1,0 +1,8 @@
+# Virtual environment
+turtle_venv
+
+# Misc stuff used for testing
+dev_tools_backups
+
+# Cache from module imports
+__pycache__
