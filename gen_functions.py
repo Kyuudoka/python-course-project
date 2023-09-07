@@ -56,12 +56,8 @@ def rand_orient():  # randomly orients the turle to a different orientation than
 def gen_triangle_params(mood_intensity):
     side1 = gen_shape_size()
     if mood_intensity == "low":
-        print("mood intensity low")
-        print(side1, "<-- side1")
         angle = random.randint(68,112)
-        print(angle, "<-- angle")
         side2 = round(((random.randint(100,150) * side1)/100))
-        print(side2, "<-- side2")
         size = (round(side1 + side2)/2)
         return side1, angle, side2, size
     elif mood_intensity == "high":
@@ -70,7 +66,6 @@ def gen_triangle_params(mood_intensity):
         size = (round(side1 + side2)/2)
         return side1, angle, side2, size
     else:
-        print("mood intensity medium")
         angle = random.randint(45,135)
         side2 = round(((random.randint(100,300) * side1)/100))
         size = (round(side1 + side2)/2)

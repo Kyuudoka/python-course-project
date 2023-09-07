@@ -3,7 +3,7 @@ import random
 
 # Randomised shapes
 
-def draw_custom_triangle(colour, fillcolour, side1, angle, side2):
+def draw_triangle(colour, fillcolour, side1, angle, side2):
     start = t.pos()  # Setup
     t.pencolor(colour)
     t.fillcolor(fillcolour)
@@ -53,7 +53,6 @@ def draw_rand_ellipse(size, colour, fillcolour):
 
 # Spirographs
 
-# Makes a spiky ring shape starting from position zero
 def spiky_ring(colour):
     start = t.pos()
     t.down()
@@ -96,3 +95,4 @@ def small_ring(colour):
         t.left(105)
         t.forward(25)
         t.left(20)
+
