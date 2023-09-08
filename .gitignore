@@ -6,3 +6,6 @@ dev_tools_backups
 
 # Cache from module imports
 __pycache__
+
+# The requirements checklist for the project
+project_req_checklist.md

@@ -1,14 +1,22 @@
 from palette_lists import *
 
 # Quiz variables -takes user input to influence randomisation parameters for drawing
+print(''' 
 
-complexity = input("\nAre your thoughts and feelings as elaborate as the Bayeux tapestry, or closer to a knitted scarf? On a scale of 1-10, how complex are your thoughts and feelings right now? --> ")  # 1-10
+███╗   ███╗ ██████╗  ██████╗ ██████╗ ███████╗████████╗ █████╗ ███╗   ███╗██████╗ 
+████╗ ████║██╔═══██╗██╔═══██╗██╔══██╗██╔════╝╚══██╔══╝██╔══██╗████╗ ████║██╔══██╗
+██╔████╔██║██║   ██║██║   ██║██║  ██║███████╗   ██║   ███████║██╔████╔██║██████╔╝
+██║╚██╔╝██║██║   ██║██║   ██║██║  ██║╚════██║   ██║   ██╔══██║██║╚██╔╝██║██╔═══╝ 
+██║ ╚═╝ ██║╚██████╔╝╚██████╔╝██████╔╝███████║   ██║   ██║  ██║██║ ╚═╝ ██║██║     
+╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝     ''')
+
+complexity = input("\nHow complex are your thoughts and feelings right now? Give a number between 1 and 6, where 1 represents having only a few thoughts and 6 represents thinking about many different things simultaneously --> ")  # 1-10
 # represented by more types of shapes selected for the moodstamp 
 
-energy = input("\nDo you feel like running a marathon, or going back to bed? On a scale of 1-10, how energetic do you feel right now? --> ")  # 1-10
+energy = input("\nHow energetic do you feel right now? Give a number between 1 and 10, where 1 represents being almost asleep and 10 represents being ready to run a marathon --> ")  # 1-10
 # represented by more shapes overall -influences the number of times it runs each shape applicator
 
-mood_intensity = input("\nA shout or a whisper? How intense are your feelings right now? Type low, medium, or high to set the intensity. --> ")  # low, medium, high
+mood_intensity = input("\nRegarding your current feelings, how intensely are you feeling them? Type 'low', 'medium', or 'high' to set the intensity of your mood --> ")  # low, medium, high
 # # Higher intensity = higher contrast, used to narrow down the palettes used. Also used to set higher spikiness.
 
 if mood_intensity == "low":
