@@ -19,3 +19,4 @@ fun and to honestly reflect on their current feelings.
 
 ### Misc resources
 - Colour palettes generator (https://coolors.co/palettes/trending)
+- ASCII logo (https://patorjk.com/software/taag/#p=display&h=0&f=ANSI%20Shadow&t=MoodStamp)
