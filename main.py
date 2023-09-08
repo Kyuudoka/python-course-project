@@ -10,7 +10,7 @@ from custom_shapes import draw_triangle, draw_quad
 # Shape applicator functions -these draw a set number of an identical shape in random orientations and positions on the canvas. Energy and intensity apply here
 
 def apply_triangles(palette, energy):
-    for i in range(round(int(energy) * int(complexity) / 2)):  # Energy sets how many times the applicator runs i.e. how many different types of triangle it draws
+    for i in range(round(int(energy) * int(complexity) / 3)):  # Energy sets how many times the applicator runs i.e. how many different types of triangle it draws
         side1, angle, side2, size = gen_triangle_params(mood_intensity)
         iterations = gen_iterations(size)
         relocate_pen(gen_coord(), gen_coord())
@@ -21,7 +21,7 @@ def apply_triangles(palette, energy):
             rand_orient()
 
 def apply_quads(palette, energy):
-    for i in range(round(int(energy) * int(complexity) / 2)):
+    for i in range(round(int(energy) * int(complexity) / 3)):
         side1, angle1, side2, angle2, side3, size = gen_quad_params(mood_intensity)
         iterations = gen_iterations(size)
 
