@@ -76,22 +76,14 @@ def apply_spirographs(palette):
 # Code which puts everything together
 
 t.speed(400)
-# if int(complexity) >= 5:
-#     apply_quads(palette, energy)
-#     apply_triangles(palette, energy)
-#     apply_spirographs(palette)
-# elif int(complexity) >= 3:
-#     apply_quads(palette, energy)
-#     apply_triangles(palette, energy)
-# else:
-#     apply_triangles(palette, energy)
-
-
-# Test scripts below here
-
-apply_spirographs(palette)
-
-# Test scripts above here
-
+if int(complexity) >= 5:
+    apply_quads(palette, energy)
+    apply_triangles(palette, energy)
+    apply_spirographs(palette)
+elif int(complexity) >= 3:
+    apply_quads(palette, energy)
+    apply_triangles(palette, energy)
+else:
+    apply_triangles(palette, energy)
 
 t.mainloop()  # DO NOT DELETE -keeps output window open until manually closed
