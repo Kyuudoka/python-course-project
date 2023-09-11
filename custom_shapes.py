@@ -32,24 +32,6 @@ def draw_quad(colour, fillcolour, side1, angle1, side2, angle2, side3):
     t.goto(start)
     t.end_fill()
 
-# Classic symmetrical shapes
-
-def draw_pentagon(size, colour, fillcolour):
-    pass
-
-def draw_hexagon(size, colour, fillcolour):
-    pass
-
-def draw_circle(size, colour, fillcolour):
-    pass
-
-# Misc shapes
-
-def draw_star(size, colour, fillcolour):
-    pass
-
-def draw_rand_ellipse(size, colour, fillcolour):
-    pass
 
 # Spirographs
 
