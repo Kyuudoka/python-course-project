@@ -80,7 +80,7 @@ def small_ring(colour):
 
 def spiky_star(colour):
     t.down()
-    t.pencolour(colour)
+    t.pencolor(colour)
     for i in range(18):
         t.forward(100)
         t.left(160)
