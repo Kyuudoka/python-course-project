@@ -2,7 +2,7 @@ import turtle as t
 import random
 from palette_lists import *
 from user_quiz import *
-from gen_functions import gen_colour, gen_coord, gen_iterations, relocate_pen, rand_orient, gen_triangle_params, gen_quad_params
+from gen_functions import gen_colour, gen_coord, gen_iterations, relocate_pen, rand_orient, gen_triangle_params, gen_quad_params, gen_spiro_shuffles
 from custom_shapes import draw_triangle, draw_quad, spiky_ring, small_ring, spiky_star
 
 
@@ -14,7 +14,7 @@ def apply_triangles(palette, energy):
         iterations = gen_iterations(size)
         relocate_pen(gen_coord(), gen_coord())
 
-        for i in range(iterations):  # Iterations is how many times an indentical triangle is applied, which is weighted by size
+        for i in range(iterations):  # Iterations is how many times an identical triangle is applied, which is weighted by size
             draw_triangle(gen_colour(palette), gen_colour(palette), side1, angle, side2)
             relocate_pen(gen_coord(), gen_coord())
             rand_orient()
@@ -29,55 +29,23 @@ def apply_quads(palette, energy):
             relocate_pen(gen_coord(), gen_coord())
             rand_orient()
 
-def apply_spirographs(palette):
-    if int(complexity) == 5:
-        shuffle1 = random.randint(0,2)
-        shuffle2 = random.randint(0,2)
-        if shuffle1 == 0:
-            shuffle2 = random.randint(1,2)
-        else:
-            shuffle2 = random.randint(0,2)
-        if shuffle2 == 0:
-            shuffle3 = random.randint(1,2)
-        else:
-            shuffle3 = random.randint(0,2)
-        for i in range(shuffle1):
-            spiky_ring(gen_colour(palette))
-            relocate_pen(gen_coord(), gen_coord())
-            rand_orient()
-        for i in range(shuffle2):
-            small_ring(gen_colour(palette))
-            relocate_pen(gen_coord(), gen_coord())
-            rand_orient()
-        for i in range(shuffle3):
-            spiky_star(gen_colour(palette))
-            relocate_pen(gen_coord(), gen_coord())
-            rand_orient()
-
-    elif int(complexity) == 6:
-        shuffle1 = random.randint(1,3)
-        if shuffle1 == 1:
-            shuffle2 = random.randint(2,3)
-        else:
-            shuffle2 = random.randint(1,3)
-        if shuffle2 == 1:
-            shuffle3 = random.randint(2,3)
-        else:
-            shuffle3 = random.randint(1,3)
-        for i in range(shuffle1):
-            spiky_ring(gen_colour(palette))
-            relocate_pen(gen_coord(), gen_coord())
-            rand_orient()
-        for i in range(shuffle2):
-            small_ring(gen_colour(palette))
-            relocate_pen(gen_coord(), gen_coord())
-            rand_orient()
-        for i in range(shuffle3):
-            spiky_star(gen_colour(palette))
-            relocate_pen(gen_coord(), gen_coord())
-            rand_orient()
-    else:
+def apply_spirographs(palette):  # Adds random numbers of spirographs depending on complexity
+    if int(complexity) < 5:
         pass
+    else:
+        shuffle1, shuffle2, shuffle3 = gen_spiro_shuffles(complexity)
+        for i in range(shuffle1):
+            spiky_ring(gen_colour(palette))
+            relocate_pen(gen_coord(), gen_coord())
+            rand_orient()
+        for i in range(shuffle2):
+            small_ring(gen_colour(palette))
+            relocate_pen(gen_coord(), gen_coord())
+            rand_orient()
+        for i in range(shuffle3):
+            spiky_star(gen_colour(palette))
+            relocate_pen(gen_coord(), gen_coord())
+            rand_orient()
 
 
 # Code which puts everything together

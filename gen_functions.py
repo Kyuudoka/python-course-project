@@ -90,3 +90,28 @@ def gen_quad_params(mood_intensity):
         side3 = round(((random.randint(100,300) * side1)/100))
     size = (round(side1 + side2 + side3)/3)
     return side1, angle1, side2, angle2, side3, size
+
+def gen_spiro_shuffles(complexity):
+    if int(complexity) == 5:
+        shuffle1 = random.randint(0,2)
+        shuffle2 = random.randint(0,2)
+        if shuffle1 == 0:
+            shuffle2 = random.randint(1,2)
+        else:
+            shuffle2 = random.randint(0,2)
+        if shuffle2 == 0:
+            shuffle3 = random.randint(1,2)
+        else:
+            shuffle3 = random.randint(0,2)
+        return shuffle1, shuffle2, shuffle3
+    elif int(complexity) == 6:
+        shuffle1 = random.randint(1,3)
+        if shuffle1 == 1:
+            shuffle2 = random.randint(2,3)
+        else:
+            shuffle2 = random.randint(1,3)
+        if shuffle2 == 1:
+            shuffle3 = random.randint(2,3)
+        else:
+            shuffle3 = random.randint(1,3)
+        return shuffle1, shuffle2, shuffle3
