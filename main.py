@@ -33,7 +33,11 @@ def apply_spirographs(palette):
     if int(complexity) == 5:
         shuffle1 = random.randint(0,2)
         shuffle2 = random.randint(0,2)
-        if shuffle1 == 0 and shuffle2 ==0 :
+        if shuffle1 == 0:
+            shuffle2 = random.randint(1,2)
+        else:
+            shuffle2 = random.randint(0,2)
+        if shuffle2 == 0:
             shuffle3 = random.randint(1,2)
         else:
             shuffle3 = random.randint(0,2)
@@ -51,12 +55,15 @@ def apply_spirographs(palette):
             rand_orient()
 
     elif int(complexity) == 6:
-        shuffle1 = random.randint(0,3)
-        shuffle2 = random.randint(0,3)
-        if shuffle1 == 0 and shuffle2 ==0 :
-            shuffle3 = random.randint(1,3)
+        shuffle1 = random.randint(1,3)
+        if shuffle1 == 1:
+            shuffle2 = random.randint(2,3)
         else:
-            shuffle3 = random.randint(0,3)
+            shuffle2 = random.randint(1,3)
+        if shuffle2 == 1:
+            shuffle3 = random.randint(2,3)
+        else:
+            shuffle3 = random.randint(1,3)
         for i in range(shuffle1):
             spiky_ring(gen_colour(palette))
             relocate_pen(gen_coord(), gen_coord())
