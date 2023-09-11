@@ -3,7 +3,7 @@ import random
 from palette_lists import *
 from user_quiz import *
 from gen_functions import gen_colour, gen_coord, gen_iterations, relocate_pen, rand_orient, gen_triangle_params, gen_quad_params
-from custom_shapes import draw_triangle, draw_quad, spiky_ring, small_ring
+from custom_shapes import draw_triangle, draw_quad, spiky_ring, small_ring, spiky_star
 
 
 # Shape applicator functions -these draw a set number of an identical shape in random orientations and positions on the canvas. Energy and intensity apply here
@@ -31,30 +31,32 @@ def apply_quads(palette, energy):
 
 def apply_spirographs(palette):
     if int(complexity) == 5:
-        print("Complexity is 5")
         shuffle1 = random.randint(0,2)
-        if shuffle1 == 0:
-            shuffle2 = random.randint(1,2)
+        shuffle2 = random.randint(0,2)
+        if shuffle1 == 0 and shuffle2 ==0 :
+            shuffle3 = random.randint(1,2)
         else:
-            shuffle2 = random.randint(0,2)
-
+            shuffle3 = random.randint(0,2)
         for i in range(shuffle1):
             spiky_ring(gen_colour(palette))
             relocate_pen(gen_coord(), gen_coord())
             rand_orient()
         for i in range(shuffle2):
             small_ring(gen_colour(palette))
+            relocate_pen(gen_coord(), gen_coord())
+            rand_orient()
+        for i in range(shuffle3):
+            spiky_star(gen_colour(palette))
             relocate_pen(gen_coord(), gen_coord())
             rand_orient()
 
     elif int(complexity) == 6:
-        print("Complexity is 6")
         shuffle1 = random.randint(0,3)
-        if shuffle1 == 0:
-            shuffle2 = random.randint(1,3)
+        shuffle2 = random.randint(0,3)
+        if shuffle1 == 0 and shuffle2 ==0 :
+            shuffle3 = random.randint(1,3)
         else:
-            shuffle2 = random.randint(0,3)
-
+            shuffle3 = random.randint(0,3)
         for i in range(shuffle1):
             spiky_ring(gen_colour(palette))
             relocate_pen(gen_coord(), gen_coord())
@@ -63,9 +65,12 @@ def apply_spirographs(palette):
             small_ring(gen_colour(palette))
             relocate_pen(gen_coord(), gen_coord())
             rand_orient()
+        for i in range(shuffle3):
+            spiky_star(gen_colour(palette))
+            relocate_pen(gen_coord(), gen_coord())
+            rand_orient()
     else:
         pass
-
 
 
 # Code which puts everything together
@@ -74,7 +79,7 @@ t.speed(400)
 # if int(complexity) >= 5:
 #     apply_quads(palette, energy)
 #     apply_triangles(palette, energy)
-#     apply_spirographs(palette, energy)
+#     apply_spirographs(palette)
 # elif int(complexity) >= 3:
 #     apply_quads(palette, energy)
 #     apply_triangles(palette, energy)

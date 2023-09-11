@@ -78,3 +78,11 @@ def small_ring(colour):
         t.forward(25)
         t.left(20)
 
+def spiky_star(colour):
+    t.down()
+    t.pencolour(colour)
+    for i in range(18):
+        t.forward(100)
+        t.left(160)
+        t.forward(50)
+        t.left(60)
